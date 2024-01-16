@@ -19,8 +19,8 @@
 
   - name: Download web app
     ansible.builtin.get_url:
-    url: https://roboshop-builds.s3.amazonaws.com/web.zip
-    dest: /tmp
+      url: https://roboshop-builds.s3.amazonaws.com/web.zip
+      dest: /tmp
 
   - name: Extract application
     ansible.builtin.unarchive:
