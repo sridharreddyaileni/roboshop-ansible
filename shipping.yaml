@@ -67,7 +67,9 @@
       msg: "schema output: {{schema}}"
 
   - name: load cities data
-    ansible.builtin.shell: "mysql -h 172.31.38.41 -p{{mysql_password}} < / app/schema/shipping.sql" #Here we changed command to shell
+    ansible.builtin.shell: "mysql -h 172.31.38.41 -uroot -p{{mysql_pasword}} < / app/schema/shipping.sql" #Here we changed command to shell
     when: schema.stdout != "1"
+
+
 
 
