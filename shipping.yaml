@@ -70,6 +70,12 @@
     ansible.builtin.shell: "mysql -h 172.31.38.41 -uroot -p{{mysql_pasword}} < / app/schema/shipping.sql" #Here we changed command to shell
     when: schema.stdout != "1"
 
+  - name: start and enable shipping
+    ansible.builtin.service:
+      name: shipping
+      state: restarted
+      enabled: yes
+
 
 
 
